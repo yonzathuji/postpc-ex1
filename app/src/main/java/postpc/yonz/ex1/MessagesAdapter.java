@@ -2,40 +2,39 @@ package postpc.yonz.ex1;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class MessagesAdapter extends ArrayAdapter<Message> {
 
-    private final Activity context;
-    private final ArrayList<Message> messages;
 
-    public MessagesAdapter(Activity context,
+    public MessagesAdapter(Context context,
                            ArrayList<Message> messages) {
-        super(context, R.layout.message_layout, messages);
-        this.context = context;
-        this.messages = messages;
-
+        super(context, 0, messages);
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View rowView= inflater.inflate(R.layout.message_layout, null, true);
-        TextView sender = (TextView) rowView.findViewById(R.id.message_sender);
-        TextView content = (TextView) rowView.findViewById(R.id.message_content);
-        TextView timeStamp = (TextView) rowView.findViewById(R.id.message_time);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Message message = getItem(position);
 
-        sender.setText(messages.get(messages.size() - 1).getSender());
-        content.setText(messages.get(messages.size() - 1).getContent());
-        timeStamp.setText(messages.get(messages.size() - 1).getTimestamp());
+        View view = convertView;
+        if (view == null) {
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            view = inflater.inflate(R.layout.message_layout, parent, false);
+        }
 
-        return rowView;
+        TextView senderTv = (TextView) view.findViewById(R.id.message_sender);
+        TextView contentTv = (TextView) view.findViewById(R.id.message_content);
+        TextView timeStampTv = (TextView) view.findViewById(R.id.message_time);
+        senderTv.setText(message.getSender());
+        contentTv.setText(message.getContent());
+        timeStampTv.setText(message.getTimestamp());
+
+        return view;
     }
 }

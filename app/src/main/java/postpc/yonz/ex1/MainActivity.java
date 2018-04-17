@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         messages = new ArrayList<>();
 
         adapter = new
-                MessagesAdapter(MainActivity.this, messages);
+                MessagesAdapter(this, messages);
         messagesListView=(ListView)findViewById(R.id.messagesListView);
         messagesListView.setAdapter(adapter);
 
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void addMessage()
     {
-        Message messageToAdd = new Message("yoni", textBox.getText().toString());
-        messages.add(messageToAdd);
+        Message messageToAdd = new Message("Yoni", textBox.getText().toString());
+        messages.add(messages.size(), messageToAdd);
         adapter.notifyDataSetChanged();
 
     }
