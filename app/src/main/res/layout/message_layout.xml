@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/message_sender"
+            android:layout_width="53dp"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="sender" />
+
+        <TextView
+            android:id="@+id/message_content"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:text="content" />
+
+        <TextView
+            android:id="@+id/message_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:text="time"
+            android:textSize="10dp" />
+
+    </TableRow>
+</TableLayout>
