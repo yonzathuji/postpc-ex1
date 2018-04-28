@@ -9,39 +9,28 @@
     <ListView
         android:id="@+id/messagesListView"
         android:layout_width="368dp"
-        android:layout_height="452dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="423dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/inputText"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:transcriptMode="alwaysScroll"
-        android:stackFromBottom="true"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/inputText"
-        android:layout_width="252dp"
-        android:layout_height="wrap_content"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="postpc.yonz.ex1.MessageInputFragment"
+        android:layout_width="361dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sendButton" />
-
-    <Button
-        android:id="@+id/sendButton"
-        android:layout_width="97dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messagesListView" />
 
 </android.support.constraint.ConstraintLayout>

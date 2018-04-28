@@ -16,13 +16,13 @@
 
         <TextView
             android:id="@+id/message_content"
-            android:layout_width="250dp"
+            android:layout_width="214dp"
             android:layout_height="match_parent"
             android:text="content" />
 
         <TextView
             android:id="@+id/message_time"
-            android:layout_width="match_parent"
+            android:layout_width="64dp"
             android:layout_height="match_parent"
             android:gravity="right"
             android:text="time"

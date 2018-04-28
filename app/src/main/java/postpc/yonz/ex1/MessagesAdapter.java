@@ -1,7 +1,6 @@
 package postpc.yonz.ex1;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,12 +24,12 @@ public class MessagesAdapter extends ArrayAdapter<Message> {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            view = inflater.inflate(R.layout.message_layout, parent, false);
+            view = inflater.inflate(R.layout.message_item_layout, parent, false);
         }
 
-        TextView senderTv = (TextView) view.findViewById(R.id.message_sender);
-        TextView contentTv = (TextView) view.findViewById(R.id.message_content);
-        TextView timeStampTv = (TextView) view.findViewById(R.id.message_time);
+        TextView senderTv =  view.findViewById(R.id.message_sender);
+        TextView contentTv =  view.findViewById(R.id.message_content);
+        TextView timeStampTv =  view.findViewById(R.id.message_time);
         senderTv.setText(message.getSender());
         contentTv.setText(message.getContent());
         timeStampTv.setText(message.getTimestamp());

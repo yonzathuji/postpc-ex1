@@ -7,6 +7,7 @@ public class Message {
 
 
     private String sender, content, timestamp;
+    private static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
     public Message(String sender, String content)
     {
@@ -14,8 +15,6 @@ public class Message {
         this.content = content;
 
         Calendar cal = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-
         this.timestamp = sdf.format(cal.getTime());
     }
 
